@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Light control</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i" rel="stylesheet"> 
+ </head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+ <script>
+  function livingroom_checked(name, isChecked) {
+      $.post("/switchflip", 
+         {
+            switch : name,
+            state : isChecked
+         }
+      );
+  } 
+ </script>
+ <header>
+  <div class="site-title">
+   <h1>Light Control!</h1>
+   <h2>At Kate's House</h2>
+  </div>
+ </header>
+ <div class="container">
+  <div class="control-row">
+   <div class="question">Living Room</div>
+   <div class="switch">
+    <input id="livingroom" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('livingroom', this.checked)" />
+    <label for="livingroom"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Guest Room</div>
+   <div class="switch">
+    <input id="guestroom" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('guestroom', this.checked)" />
+    <label for="guestroom"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Front Door</div>
+   <div class="switch">
+    <input id="frontdoor" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('frontdoor', this.checked)" />
+    <label for="frontdoor"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Hallway</div>
+   <div class="switch">
+    <input id="hallway" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('hallway', this.checked)" />
+    <label for="hallway"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Back Door</div>
+   <div class="switch">
+    <input id="backdoor" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('backdoor', this.checked)" />
+    <label for="backdoor"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Office</div>
+   <div class="switch">
+    <input id="office" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('office', this.checked)" />
+    <label for="office"></label>
+   </div>
+  </div>
+  <div class="control-row">
+   <div class="question">Bedroom</div>
+   <div class="switch">
+    <input id="bedroom" class="cmn-toggle cmn-toggle-round" type="checkbox" onchange="livingroom_checked('bedroom', this.checked)" />
+    <label for="bedroom"></label>
+   </div>
+  </div>
+ </div>
+</html>
+
